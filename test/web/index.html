@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Test socket</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      var socket = io();
+      socket.on('closetome_changed', function(msg){
+        $('#messages').children().remove();
+        if (msg !== undefined && msg.customers !== undefined) {
+          msg.customers.forEach(function(customer) {
+            $('#messages').append($('<li>').text(customer.first_name + ' ' + customer.last_name));
+          });
+
+        }
+
+      });
+
+      socket.emit('closetome_init',{ uuid: '6e305b29-4be4-ae16-4d41-9c6629234e18'});
+    </script>
+  </body>
+</html>

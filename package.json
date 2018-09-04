@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "name": "fidelisa-node",
+  "description": "fidelisa node server",
+  "version": "0.0.1",
+  "main": "./index",
+  "keywords": [
+    "Postgres"
+  ],
+  "authors": [
+    "fidelisa tech@fidelisa.com"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fidelisa/fidelisa_node.git"
+  },
+  "engine": {
+    "node": ">=0.8"
+  },
+  "scripts": {
+    "test": "cake test"
+  },
+  "dependencies": {
+    "debug": "1.0.3",
+    "express": "^4.13.1",
+    "habitat": "^3.1.2",
+    "iconv-lite": "0.4.3",
+    "js-yaml": "3.1.0",
+    "nexmo": "0.0.7",
+    "node-gcm": "0.9.11",
+    "node-schedule": "0.1.13",
+    "nodemailer": "0.7.1",
+    "pg": "3.3.0",
+    "pug": "^2.0.3",
+    "q": "1.0.1",
+    "sharp": "^0.20.2",
+    "socket.io": "1.2.0"
+  },
+  "devDependencies": {}
+}
